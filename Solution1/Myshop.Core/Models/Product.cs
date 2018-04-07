@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Myshop.Core.Models
 {
-    public class Product
+    public class Product : BaseEntity
     {
         //here we have all item attributres
 
-        public string Id { get; set; }
+     //BASEENTITY 早已包含ID 所以删除id 和下面的function
 
         [StringLength(20)]
         [DisplayName("Product Name")]
@@ -24,9 +24,7 @@ namespace Myshop.Core.Models
         public string Section { get; set; }
         public string Image { get; set; }
 
-        public Product()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
+    //    public Product()
+    //   {this.Id = Guid.NewGuid().ToString(); }
     }
 }
